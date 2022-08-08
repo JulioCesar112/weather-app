@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+
+.App {
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:url(https://i.blogs.es/f7a1cd/fondo/1366_2000.jpeg);
+}
+
+.loader {
+  width: 10%;
+  aspect-ratio: 1;
+}
+.card {
+  border-radius: 20px;
+  border: 1px;
+  padding: 20px;
+  background-image: linear-gradient(rgb(0, 204, 255),yellow);
+  
+}
+.head {
+  display: flex;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+.country{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  gap: 40px;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(92, 240, 245);
+  border: 0 ;
+  border-radius: 10px;
+}
