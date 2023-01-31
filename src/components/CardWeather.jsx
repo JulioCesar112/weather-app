@@ -13,7 +13,7 @@ const CardWeather = ({lat,lon}) => {
   useEffect(() => {
 
     if (lon) {
-      const APIKey = 'd993d119ca66d0a611399e0a7acadf4a'
+      const APIKey = '4d869182c90c457d02197c23d8e9c33e'
       const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`
 
       axios.get(URL)
@@ -31,7 +31,6 @@ const CardWeather = ({lat,lon}) => {
     
   }, [lat,lon])
   
-  console.log(weather)
 
   const handleClick = () => setIsCelsius(!isCelsius)
   if (isLoading) {

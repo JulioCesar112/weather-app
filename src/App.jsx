@@ -18,7 +18,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
   
-
+console.log(coords)
   return (
     <div className="App">
           <CardWeather lat={coords?.lat} lon={coords?.lon}/>
