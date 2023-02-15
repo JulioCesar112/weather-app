@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import CardWeather from './components/CardWeather'
+import WeatherCityName from './components/WeatherCityName'
 
 function App() {
-
   const [coords, setCoords] = useState()
 
 
@@ -17,11 +16,11 @@ function App() {
     }
     navigator.geolocation.getCurrentPosition(success)
   }, [])
-  
-console.log(coords)
+ 
   return (
-    <div className="App">
-          <CardWeather lat={coords?.lat} lon={coords?.lon}/>
+    <div  className="App">
+      <CardWeather lat={coords?.lat} lon={coords?.lon} />
+      <WeatherCityName />
     </div>
   )
 }

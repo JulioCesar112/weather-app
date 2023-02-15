@@ -1,0 +1,15 @@
+.form_weather{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.btn_form{
+  transition: transform .1s ease-out;
+}
+.btn_form:hover{
+  transform: scale(1.2);
+}
+.btn_form:active{
+  background-color: rebeccapurple;
+}
