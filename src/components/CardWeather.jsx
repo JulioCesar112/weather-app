@@ -32,7 +32,6 @@ const CardWeather = ({ lat, lon, }) => {
 
   }, [lat, lon])
 
-
   const handleClick = () => setIsCelsius(!isCelsius)
 
   if (isLoading) {
@@ -42,10 +41,12 @@ const CardWeather = ({ lat, lon, }) => {
       <article className='card'>
         <div className='card__country'>
           <h2 className='card__name'>{`${weather?.name}`}</h2>
+          
           <div className='card__info'>
             <h2 className='card__temperature'>{isCelsius ? temperature?.celsius : temperature?.farenheit}</h2>
             <img className='card__icon' src={weather && `http://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`} alt="" />
           </div>
+          
           <a className='handle-temp' onClick={handleClick}>{isCelsius ? "°C" : "°F"}</a>
           <h3 className='card__description'>{weather?.weather[0].description}</h3>
           <ul className='card__container'>
