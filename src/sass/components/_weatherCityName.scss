@@ -4,13 +4,11 @@
   @include mix.flex_center;
   flex-direction: column;
   gap: 1rem;
-  width: 520px;
+  width: 530px;
   height: 380px;
   border-radius: 10px;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.377);
-
-  
 
   .form__weather {
     display: flex;

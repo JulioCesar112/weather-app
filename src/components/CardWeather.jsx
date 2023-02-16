@@ -49,9 +49,10 @@ const CardWeather = ({ lat, lon, }) => {
           
           <a className='handle-temp' onClick={handleClick}>{isCelsius ? "°C" : "°F"}</a>
           <h3 className='card__description'>{weather?.weather[0].description}</h3>
+          
           <ul className='card__container'>
             <li><span>Wind Speed: </span>{weather?.wind.speed} m/s</li>
-            <li><span>Clouds: </span>{weather?.clouds.all}%</li>
+            <li><span>Clouds: </span>{weather?.clouds.all} %</li>
             <li><span>Pressure: </span>{weather?.main.pressure} hPa</li>
           </ul>
         </div>
