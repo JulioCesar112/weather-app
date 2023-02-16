@@ -25,20 +25,22 @@ const WeatherCityName = () => {
     e.target.reset()
   }
 
-  console.log(aboutCity)
+  const temp = Math.floor(aboutCity?.main.temp - 273)
 
   return (
     <article className='card__search'>
-      <form className='form_weather' onSubmit={handleSubmit} >
-        <label htmlFor="city">City</label>
-        <input id='city' type="text" placeholder='Type your City' />
-        <button className='btn_form'>Search</button>
+      <form className='form__weather' onSubmit={handleSubmit} >
+        <input className='form__input' id='city' type="text" placeholder='Type your City' />
+        <button className='form__btn'>Search</button>
       </form>
+      <h3 className='card__name'>{aboutCity?.name}</h3>
 
-      <h3>{aboutCity?.name}</h3>
-      <h4>{aboutCity?.sys.country}</h4>
-      <p>{aboutCity?.weather[0].description}</p>
-      <img src={aboutCity && `http://openweathermap.org/img/wn/${aboutCity?.weather[0].icon}@4x.png`}/>
+      <div className='card__info'>
+        <h2 className='card__temperature'>{`${temp} °`}</h2>
+        <img className='card__icon' src={aboutCity && `http://openweathermap.org/img/wn/${aboutCity?.weather[0].icon}@4x.png`} />
+      </div>
+
+      <p className='card__description'>{aboutCity?.weather[0].description}</p>
     </article>
   )
 }
