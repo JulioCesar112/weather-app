@@ -27,26 +27,40 @@ const WeatherCityName = () => {
 
   const temp = Math.floor(aboutCity?.main.temp - 273)
 
-  return (
-    <article className='card__search'>
-      <form className='form__weather' onSubmit={handleSubmit} >
-        <input className='form__input' id='city' type="text" placeholder='Type your City' />
-        <button className='form__btn'>Search</button>
-      </form>
-      <h3 className='card__name'>{aboutCity?.name}</h3>
 
-      <div className='card__info'>
-        <h2 className='card__temperature'>{`${temp} °`}</h2>
-        <img className='card__icon' src={aboutCity && `http://openweathermap.org/img/wn/${aboutCity?.weather[0].icon}@4x.png`} />
-      </div>
-      <p className='card__description'>{aboutCity?.weather[0].description}</p>
-      <ul className='card__container' >
-        <li><span>Wind Speed: </span>{aboutCity?.wind.speed} m/s</li>
-        <li><span>Clouds: </span>{aboutCity?.clouds.all} %</li >
-        <li><span>Pressure: </span>{aboutCity?.main.pressure} hPa</li>
-      </ul>
-    </article>
-  )
+  if (city) {
+      return (
+      <article className='card__search'>
+        <form className='form__weather' onSubmit={handleSubmit} >
+          <input className='form__input' id='city' type="text" placeholder='Type your City' />
+          <button className='form__btn'>Search</button>
+        </form>
+
+        <h3 className='card__name'>{aboutCity?.name}</h3>
+
+        <div className='card__info'>
+          <h2 className='card__temperature'>{`${temp} °`}</h2>
+          <img className='card__icon' src={aboutCity && `http://openweathermap.org/img/wn/${aboutCity?.weather[0].icon}@4x.png`} />
+        </div>
+        <p className='card__description'>{aboutCity?.weather[0].description}</p>
+        <ul className='card__container' >
+          <li><span>Wind Speed: </span>{aboutCity?.wind.speed} m/s</li>
+          <li><span>Clouds: </span>{aboutCity?.clouds.all} %</li >
+          <li><span>Pressure: </span>{aboutCity?.main.pressure} hPa</li>
+        </ul>
+      </article>
+    )
+  } else {
+    return (
+      <article className='card__search'>
+        <form className='form__weather' onSubmit={handleSubmit} >
+          <input className='form__input' id='city' type="text" placeholder='Type your City' />
+          <button className='form__btn'>Search</button>
+        </form>
+      </article>
+    )
+
+  }
 }
 
 export default WeatherCityName
