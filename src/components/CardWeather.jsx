@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Loading from './Loading'
+import WeatherCityName from './WeatherCityName'
+
 
 const CardWeather = ({ lat, lon, }) => {
   const [weather, setWeather] = useState()
@@ -52,7 +54,9 @@ const CardWeather = ({ lat, lon, }) => {
             <li><span>Pressure: </span>{weather?.main.pressure} hPa</li>
           </ul>
         </div>
+        <WeatherCityName/>
       </article>
+  
     )
 
   }

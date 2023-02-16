@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import CardWeather from './components/CardWeather'
-import WeatherCityName from './components/WeatherCityName'
+import Loading from './components/Loading'
 
 function App() {
   const [coords, setCoords] = useState()
@@ -20,7 +20,6 @@ function App() {
   return (
     <div  className="App">
       <CardWeather lat={coords?.lat} lon={coords?.lon} />
-      <WeatherCityName />
     </div>
   )
 }

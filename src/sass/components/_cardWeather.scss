@@ -1,6 +1,8 @@
 @use "../utils/mixins" as mix;
 .card{
-  padding: 1rem
+  @include mix.flex_center;
+  height: 100vh;
+  gap: 5rem
 }
 .card__country {
   @include mix.flex_center;
